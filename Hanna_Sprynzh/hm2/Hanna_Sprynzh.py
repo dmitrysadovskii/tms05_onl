@@ -1,1 +1,1 @@
-print("Hanna Sprynzh QAP05-onl")
+print("Hanna Sprynzh, QAP05-onl")
