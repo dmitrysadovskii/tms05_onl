@@ -1,2 +1,2 @@
 a = " New line "
-print(a[1:-1])
+print(a.strip())
