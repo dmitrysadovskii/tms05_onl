@@ -1,1 +1,1 @@
-print("shmelev vadik QAP05-onl")
+print("vadim shmelev qap05-onl")
