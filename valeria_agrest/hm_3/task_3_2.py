@@ -1,6 +1,9 @@
-def programme_ing(word):
-    print(word + 'ing')
+def programme_ing(s):
+    custom_string = ''
+    for word in s.split():
+        custom_string += word + 'ing '
+
+    print(custom_string)
 
 
-programme_ing('say')
-programme_ing('complain')
+programme_ing('say hello everyone')
