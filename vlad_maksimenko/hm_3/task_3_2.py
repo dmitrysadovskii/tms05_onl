@@ -6,7 +6,6 @@ print(new + ing)
 """second"""
 new = "Push"
 ing = "ing"
-
 print("{word}".format(word = new + ing))
 
 """third"""
