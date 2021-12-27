@@ -1,8 +1,5 @@
-# 1
-word = "go"
-print(f"{word}ing")
-
-# 2
-word = "go"
-end = "ing"
-print(word + end)
+sentence = "I learn Python"
+words = sentence.split()
+words1 = [word + 'ing' for word in words]
+sentence1 = (" ".join(words1))
+print(sentence1)
