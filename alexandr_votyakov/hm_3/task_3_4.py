@@ -1,3 +1,3 @@
-s = " Hello my name Alex "
-new_s = s[1:-1]
+s = "    Hello my name Alex    "
+new_s = s.strip(' ')
 print(new_s)
