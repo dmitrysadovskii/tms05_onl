@@ -1,3 +1,3 @@
 Worlds = input('Enter world:')
-End = Worlds +'ing'
+End = Worlds + 'ing'
 print(End)
