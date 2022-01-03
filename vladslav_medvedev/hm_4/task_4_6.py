@@ -4,4 +4,4 @@
 Напишите программу, которая будет выводить уникальное число
 """
 array = [1, 5, 2, 9, 2, 9, 1]
-print(min(array, key = array.count))
+print(min(array, key=array.count))
