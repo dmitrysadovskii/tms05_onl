@@ -1,7 +1,8 @@
 """
 Перевести строку в массив
 "Robin Singh" => ["Robin”, “Singh"]
-"I love arrays they are my favorite" => ["I", "love", "arrays", "they", "are", "my", "favorite"]
+"I love arrays they are my favorite" =>
+["I", "love", "arrays", "they", "are", "my", "favorite"]
 """
 f_str = "Robin Singh"
 s_str = "I love arrays they are my favorite"
