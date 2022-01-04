@@ -1,3 +1,5 @@
-Worlds = input('Enter world:')
-End = Worlds + 'ing'
-print(End)
+Words = input('Enter words:')
+commands = Words.split()
+arr = [f'{w}ing' for w in commands]
+print(' '.join(arr))
+
