@@ -45,7 +45,7 @@ def rus():
 
 
 dict = {1: eng, 2: rus}
-inp = input(f"Choise a language: 1-English or 2-Russian: ")
+inp = input("Choise a language: 1-English or 2-Russian: ")
 choices = list(map(int, inp.split()))
 for choice in choices:
     if 0 < choice and choice < 3:
