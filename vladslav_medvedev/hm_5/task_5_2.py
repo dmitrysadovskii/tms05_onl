@@ -6,7 +6,6 @@ likes("Ann", "Alex") -> "Ann and Alex like this"
 likes("Ann", "Alex", "Mark") -> "Ann, Alex and Mark like this"
 likes("Ann", "Alex", "Mark", "Max") -> "Ann, Alex and 2 others like this"
 '''
-
 def eng():
     array = input('Write list of people: ')
     array = array.split()
@@ -22,7 +21,6 @@ def eng():
     elif count >= 4:
         count = count - 2
         print(f"{array[0]}, {array[1]} and {count} other like this")
-
 def rus():
     array = input('Введите имена людей: ')
     array = array.split()
