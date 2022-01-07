@@ -7,7 +7,7 @@
 '''
 const = '3219'
 for i in range(100):
-    n,count_c, count_b = 0, 0, 0 #Создаем и обновляем переменные-счетчики
+    n, count_c, count_b = 0, 0, 0
     input_1 = ''
     input_1 = input('Введите 4х значное число: ')
     for i in const:
@@ -15,7 +15,7 @@ for i in range(100):
             count_c += 1
             n += 1
         elif i != input_1[n]:
-            count_b +=1
+            count_b += 1
             n += 1
     if count_c > 3:
         print("Ураааа ты победил ")
@@ -25,6 +25,6 @@ for i in range(100):
         print(f'Кол-во Быков:{count_b}')
 
 '''
-Правила немного изменились 
+Правила немного изменились
 пс на написание этой игры ушло много часов
 '''

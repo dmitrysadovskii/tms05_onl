@@ -34,11 +34,12 @@ def rus():
     elif count < 3:
         print(f"Пользователям {array[0]} и {array[1]} это понравилось")
     elif count < 4:
-        print(f"Пользователям {array[0]}, {array[1]} и {array[2]} это понравилось")
+        print(f"Пользователям {array[0]}, {array[1]}"
+              f" и {array[2]} это понравилось")
     elif count >= 4:
         count = count - 2
-        print(f"Пользователям {array[0]}, {array[1]} и {count} другим это понравилось")
-
+        print(f"Пользователям {array[0]}, {array[1]} и"
+              f" {count} другим это понравилось")
 dict = {1: eng, 2: rus}
 choices = list(map(int, input(f"Choise a language:"
                               f" 1-English or 2-Russian: ").split()))
