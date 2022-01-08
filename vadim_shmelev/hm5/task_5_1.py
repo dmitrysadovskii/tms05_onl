@@ -12,9 +12,9 @@ while True:
     c = 0
     for i in range(4):
         if x[i] == y[i]:
-            b = b+1
+            b = b + 1
         elif y[i] in x:
-            c = c+1
+            c = c + 1
     print(y + ' is ' + str(b) + ' bulls and ' + str(c) + ' cows')
     if b == 4:
         print('You win!!!!!')
