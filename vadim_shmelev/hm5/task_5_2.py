@@ -12,5 +12,5 @@ elif likes_sum < 4:
     print(f'{like_list[0]}, {like_list[1]} and {like_list[2]} like this')
 elif likes_sum >= 4:
     likes_sum = likes_sum - 2
-    from random import choice
-    print(f'{choice(like_list)}, {choice(like_list)} and {likes_sum} other like this')
+
+    print(f'{like_list[2]}, {like_list[3]} and {likes_sum} other like this')
