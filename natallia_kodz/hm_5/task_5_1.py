@@ -25,8 +25,8 @@ def game():
     if bull == 4:
         print("Your number is right!!!")
     else:
-        print(number2 + " contains " + str(bull) + " bulls and " + str(cow)
-              + " cows ")
+        print(number2 + " contains " + str(bull) + " bulls and " + str(cow) +
+              " cows ")
         return game()
 
 
