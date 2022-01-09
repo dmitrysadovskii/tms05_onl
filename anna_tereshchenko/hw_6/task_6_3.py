@@ -18,7 +18,8 @@ class IncorrectValue(Exception):
 
 while True:
     try:
-        option_input = int(input('1. Сложение\n2. Вычитание\n3. Умножение\n4. Деление\nВведите номер пункта меню:\n'))
+        option_input = int(input('1. Сложение\n2. Вычитание\n3. Умножение\n'
+                                 '4. Деление\nВведите номер пункта меню:\n'))
         if option_input < 1 or option_input > 4:
             raise IncorrectValue
     except IncorrectValue:
