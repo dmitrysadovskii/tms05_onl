@@ -35,7 +35,7 @@ def rus():
 mydict = {1: eng, 2: rus}
 choices = list(map(int, input("Do you want to: \n(1)Eng \n(2)Rus\n").split()))
 for choice in choices:
-    if 0 < choice and choice < 3:
+    if 0 < choice < 3:
         mydict[choice]()
     else:
         print("That is not between 1 and 2! Try again:")
