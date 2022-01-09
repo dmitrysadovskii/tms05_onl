@@ -13,8 +13,8 @@ def function1():
 
 
 def game():
-    number2 = function1()
-    new_list2 = list(str(number2))
+    num2 = function1()
+    new_list2 = list(str(num2))
     bull = 0
     cow = 0
     for i in range(4):
@@ -25,8 +25,7 @@ def game():
     if bull == 4:
         print("Your number is right!!!")
     else:
-        print(number2 + " contains " + str(bull) + " bulls and " + str(cow) +
-              " cows ")
+        print(num2 + " has " + str(bull) + " bulls and " + str(cow) + " cows ")
         return game()
 
 
