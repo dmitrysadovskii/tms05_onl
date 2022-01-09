@@ -54,4 +54,5 @@ while bull != len(secret):
         bull_str = 'бык'
     else:
         bull_str = 'быков'
-    print(f'{digit_to_string_cow[cow]} {cow_str}, {digit_to_string_bull[bull]} {bull_str}')
+    print(f'{digit_to_string_cow[cow]} {cow_str}, '
+          f'{digit_to_string_bull[bull]} {bull_str}')

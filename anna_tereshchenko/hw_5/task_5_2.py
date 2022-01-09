@@ -31,9 +31,11 @@ def likes(arr, language):
     elif len(arr) == 2:
         print(arr[0], dict_word[str1][3], arr[1], dict_word[str1][4])
     elif len(arr) == 3:
-        print(f'{arr[0]}, {arr[1]} {dict_word[str1][3]} {arr[2]} {dict_word[str1][4]}')
+        print(f'{arr[0]}, {arr[1]} {dict_word[str1][3]} '
+              f'{arr[2]} {dict_word[str1][4]}')
     else:
-        print(f'{arr[0]}, {arr[1]} {dict_word[str1][3]} {len(arr) - 2} {dict_word[str1][5]}')
+        print(f'{arr[0]}, {arr[1]} {dict_word[str1][3]} '
+              f'{len(arr) - 2} {dict_word[str1][5]}')
 
 
 likes(['Anna', 'Sergey', 'Alex'], EN)
