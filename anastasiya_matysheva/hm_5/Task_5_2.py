@@ -1,8 +1,12 @@
 def eng(name):
     if len(like_list) > 3:
-        return '{}, {} and {} like this'.format(like_list[0], like_list[1], len(like_list) - 2)
+        return '{}, {} and {} like this'.format(like_list[0],
+                                                like_list[1],
+                                                len(like_list) - 2)
     elif len(like_list) == 3:
-        return '{}, {} and {} like this'.format(like_list[0], like_list[1], like_list[2])
+        return '{}, {} and {} like this'.format(like_list[0],
+                                                like_list[1],
+                                                like_list[2])
     elif len(like_list) == 2:
         return '{} and {} like this'.format(like_list[0], like_list[1])
     elif len(like_list) == 1:
@@ -13,9 +17,13 @@ def eng(name):
 
 def rus(name):
     if len(like_list) > 3:
-        return '{}, {} и {} нравится эта запись'.format(like_list[0], like_list[1], len(like_list) - 2)
+        return '{}, {} и {} нравится эта запись'.format(like_list[0],
+                                                        like_list[1],
+                                                        len(like_list) - 2)
     elif len(like_list) == 3:
-        return '{}, {} и {} нравится эта запись'.ormat(like_list[0], like_list[1], like_list[2])
+        return '{}, {} и {} нравится эта запись'.ormat(like_list[0],
+                                                       like_list[1],
+                                                       like_list[2])
     elif len(like_list) == 2:
         return '{} и {} нравится эта запись'.format(like_list[0], like_list[1])
     elif len(like_list) == 1:
