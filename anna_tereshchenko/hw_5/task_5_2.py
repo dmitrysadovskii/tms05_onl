@@ -20,10 +20,14 @@ dict_word = {
 }
 
 
-def likes(arr, language):
+def likes(arr):
     str1 = EN
-    if language == RU:
-        str1 = RU
+    for i in arr:
+        for j in i:
+            if ord(j) in range(1040, 1104):
+                str1 = RU
+            break
+        break
     if not arr:
         print(dict_word[str1][1])
     elif len(arr) == 1:
@@ -38,4 +42,4 @@ def likes(arr, language):
               f'{len(arr) - 2} {dict_word[str1][5]}')
 
 
-likes(['Anna', 'Sergey', 'Alex'], EN)
+likes(['Анна', 'Алексей', 'Евгений'])

@@ -1,5 +1,28 @@
 import random
 
+
+def validate_user_input(user_input: str) -> bool:
+    s = set()
+    if len(user_input) > 0:
+        for k in user_input:
+            if k in '0123456789':
+                s.add(k)
+            else:
+                print('Вы ввели не число')
+                return False
+    else:
+        print('Вы ничего не ввели')
+        return False
+    if len(s) != len(user_input):
+        print('Цифры не должны повторяться')
+        return False
+    if len(s) == 4:
+        return True
+    else:
+        print('Вы ввели не четырехзначное число')
+        return False
+
+
 first = random.choice(range(1, 10))
 leftover = list(range(0, 10))
 leftover.remove(first)
@@ -15,22 +38,10 @@ while bull != len(secret):
     bull = 0
     cow = 0
     answer = (input('Введите число: '))
-    arr = []
-    try:
-        if len(answer) != 4:
-            print('Вы ввели не четырехзначное число!')
-            continue
-        for i in answer:
-            if int(i) in arr:
-                raise Exception
-            arr.append(int(i))
-    except ValueError:
-        print('Это не число')
+    is_valid = validate_user_input(answer)
+    if not is_valid:
         continue
-    except Exception:
-        print('Цифры не должны повторяться')
-        continue
-    answer = arr
+    answer = [int(i) for i in answer]
     k = 0
     for i in answer:
         if i in secret:
