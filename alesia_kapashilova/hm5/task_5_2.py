@@ -26,5 +26,3 @@ def like(*args):
         else:
             print(f'{args[0]}, {args[1]} и еще {len(args[2:])} '
                   f'другим понравилось это')
-
-like("Алеся, Катя")
