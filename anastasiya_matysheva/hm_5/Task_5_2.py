@@ -1,44 +1,52 @@
-def eng(my_string):
-    if len(my_string) > 3:
-        print("{}, {} and {} like this".format(my_string[0], my_string[1], len(my_string) - 2))
-    elif len(my_string) == 3:
-        print("{}, {} and {} like this".format(my_string[0], my_string[1], my_string[2]))
-    elif len(my_string) == 2:
-        print("{} and {} like this".format(my_string[0], my_string[1]))
-    elif len(my_string) == 1:
-        print("{} like this".format(my_string[0]))
+def eng(like_list):
+    if len(like_list) > 3:
+        print("{}, {} and {} like this".format(like_list[0],
+                                               like_list[1],
+                                               len(like_list) - 2))
+    elif len(like_list) == 3:
+        print("{}, {} and {} like this".format(like_list[0],
+                                               like_list[1],
+                                               like_list[2]))
+    elif len(like_list) == 2:
+        print("{} and {} like this".format(like_list[0], like_list[1]))
+    elif len(like_list) == 1:
+        print("{} like this".format(like_list[0]))
     else:
         print("no one likes this")
 
 
-def rus(my_string):
-    if len(my_string) > 3:
-        print("{}, {} и {} нравится запись".format(my_string[0], my_string[1], len(my_string) - 2))
-    elif len(my_string) == 3:
-        print("{}, {} и {} нравится запись".format(my_string[0], my_string[1], my_string[2]))
-    elif len(my_string) == 2:
-        print("{} и {} нравится запись".format(my_string[0], my_string[1]))
-    elif len(my_string) == 1:
-        print("{} нравится запись".format(my_string[0]))
+def rus(like_list):
+    if len(like_list) > 3:
+        print("{}, {} и {} нравится запись".format(like_list[0],
+                                                   like_list[1],
+                                                   len(like_list) - 2))
+    elif len(like_list) == 3:
+        print("{}, {} и {} нравится запись".format(like_list[0],
+                                                   like_list[1],
+                                                   like_list[2]))
+    elif len(like_list) == 2:
+        print("{} и {} нравится запись".format(like_list[0], like_list[1]))
+    elif len(like_list) == 1:
+        print("{} нравится запись".format(like_list[0]))
     else:
-        print("no one likes this")
+        print("Не нравится ни одна запись")
 
 
-def choose_lang(my_string):
-    count = False
-    if len(my_string) <= 0:
+def choose_lang(like_list):
+    lang = 'en'
+    if len(like_list) <= 0:
         print("no one likes this")
     else:
-        for i in my_string[0]:
+        for i in like_list[0]:
             if ord(i) > 127:
-                count = True
-        if count:
-            rus(my_string)
+                lang = 'ru'
+        if lang == 'ru':
+            rus(like_list)
         else:
-            eng(my_string)
+            eng(like_list)
 
 
 if __name__ == '__main__':
-    my_string = input("Enter name: ")
-    l = my_string.split()
-    choose_lang(l)
+    like_list = input("Enter name: ")
+    like = like_list.split()
+    choose_lang(like)
