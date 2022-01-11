@@ -9,7 +9,7 @@ likes("Ann", "Alex", "Mark", "Max") -> "Ann, Alex and 2 others like this"
 
 
 def eng():
-    array = input('Write list of people: ')
+    array = choices
     array = array.split()
     count = len(array)
     if count == 0:
@@ -26,7 +26,7 @@ def eng():
 
 
 def rus():
-    array = input('Введите имена людей: ')
+    array = choices
     array = array.split()
     count = len(array)
     if count == 0:
@@ -43,12 +43,14 @@ def rus():
         print(f"Пользователям {array[0]}, {array[1]} и"
               f" {count} другим это понравилось")
 
-
-dict = {1: eng, 2: rus}
-inp = input("Choise a language: 1-English or 2-Russian: ")
-choices = list(map(int, inp.split()))
-for choice in choices:
-    if 0 < choice and choice < 3:
-        dict[choice]()
+list_eng = 'a, b, c, d, e, f, g, h,i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z'
+choices = input("Write list of people: / Введите имена людей: ")
+for i in choices:
+    if i.lower() in list_eng:
+        choice = 1
+        eng()
+        break
     else:
-        print("That is not between 1 and 2!")
+        choice = 2
+        rus()
+        break
