@@ -1,24 +1,25 @@
 number = 3219
 new_number = input('Введите четырехзначное число: ')
-new_number_list = list(new_number)
-number_list = list(str(number))
+number_str = str(number)
 
 bik = 0
 korova = 0
-unique = set(new_number_list)
+unique = set(list(new_number))
 
 
-if len(new_number_list) == 0:
+if len(new_number) == 0:
     print('Вы ничего не ввели!')
 else:
-    if len(new_number_list) != 4:
+    if not new_number.isdigit():
+        print('Введите только цыфры!')
+    elif len(new_number) != 4:
         print('Вы ввели не четырехзначное число!')
-    elif len(set(number_list)) != len(unique):
+    elif len(set(number_str)) != len(unique):
         print('Цыфры не должны повторяться!')
     else:
-        for i in number_list:
-            if i in new_number_list:
-                if number_list.index(i) == new_number_list.index(i):
+        for i in number_str:
+            if i in new_number:
+                if number_str.index(i) == new_number.index(i):
                     bik += 1
                 else:
                     korova += 1
