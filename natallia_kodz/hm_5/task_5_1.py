@@ -2,22 +2,25 @@ number1 = 1945
 new_list1 = list(str(number1))
 
 
-def function1():
+def get_user_number():
     number = input("Enter 4-digit number: ")
     new_list = list(str(number))
-    if len(new_list) == 4:
+    if len(set(number)) < len(number):
+        print("Digits in number should be unique")
+        return get_user_number()
+    elif len(new_list) == 4:
         return number
     else:
         print("Incorrect number")
-        return function1()
+        return get_user_number()
 
 
 def game():
-    num2 = function1()
+    num2 = get_user_number()
     new_list2 = list(str(num2))
     bull = 0
     cow = 0
-    for i in range(4):
+    for i in range(len(new_list2)):
         if new_list1[i] == new_list2[i]:
             bull += 1
         elif new_list2[i] in new_list1:
@@ -25,7 +28,7 @@ def game():
     if bull == 4:
         print("Your number is right!!!")
     else:
-        print(num2 + " has " + str(bull) + " bulls and " + str(cow) + " cows ")
+        print(f"{num2} has {bull} bulls and {cow} cows")
         return game()
 
 
