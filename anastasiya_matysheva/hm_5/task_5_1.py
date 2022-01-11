@@ -14,9 +14,9 @@ if len(enter_numb_list) == 0:
 else:
     if len(enter_numb_list) != 4:
         print('Enter only four-digit number')
-    elif len(set(enter_numb_list)) != len(unique):
+    elif len(set(hidden_numb_list)) != len(unique):
         print('numbers should not be repeated ')
-    elif enter_numb.isalpha():
+    elif enter_numb.islower():
         print('Enter only numbers')
     else:
         for i in hidden_numb_list:
