@@ -1,4 +1,4 @@
-def luna_algorithm(card_number):
+def luna_algorithm(card_number) -> bool:
     arr = []
     for i in card_number:
         arr.append(int(i))
@@ -21,16 +21,38 @@ def luna_algorithm(card_number):
         return False
 
 
-while True:
-    try:
-        card_number_input = (input('Введите номер карты: '))
-        int_card_number = int(card_number_input)
+def validate_user_input(user_input: str) -> bool:
+    s = []
+    if len(user_input) > 0:
+        for k in user_input:
+            if k in '0123456789':
+                s.append(k)
+            else:
+                print('Вы ввели не число')
+                return False
+    else:
+        print('Вы ничего не ввели')
+        return False
+    return True
+
+
+k = 0
+print('Номер карты должен содержать только цифры без пробелов\n'
+      'У вас есть три попытки ввести корректный номер карты')
+while k < 3:
+    card_number_input = (input('Введите номер карты: '))
+    is_valid = validate_user_input(card_number_input)
+    if not is_valid:
+        k += 1
+        if k == 3:
+            pass
+        else:
+            print(f'Количество оставшихся попыток: {3 - k} из 3')
+        continue
+    else:
         result = luna_algorithm(card_number_input)
         if result:
             print('Карта валидна')
         else:
             print('Карта не валидна')
-        break
-    except ValueError:
-        print('Это не число, введите число, содержащее только цифры')
-        continue
+    break

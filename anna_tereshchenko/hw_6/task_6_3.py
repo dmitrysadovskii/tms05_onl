@@ -12,21 +12,15 @@ def calculation(option, x, y):
             return print(f'{x / y}\nЧастное: {x // y}, Остаток: {x % y}')
 
 
-class IncorrectValue(Exception):
-    pass
-
-
 while True:
     try:
-        option_input = int(input('1. Сложение\n2. Вычитание\n3. Умножение\n'
-                                 '4. Деление\nВведите номер пункта меню:\n'))
-        if option_input < 1 or option_input > 4:
-            raise IncorrectValue
-    except IncorrectValue:
-        print('Введите число от 1 до 4: ')
-        continue
+        option = int(input('1. Сложение\n2. Вычитание\n3. Умножение\n'
+                           '4. Деление\nВведите номер пункта меню:\n'))
+        if option < 1 or option > 4:
+            print('Введите число от 1 до 4: ')
+            continue
     except ValueError:
-        print('Это не число, пожалуйста, введите число: ')
+        print('Это не число, пожалуйста, введите число')
         continue
     break
 
@@ -37,14 +31,12 @@ while True:
         if not first_number:
             first_number = int(input('Введите первое число: '))
         second_number = int(input('Введите второе число: '))
-        if option_input == 4 and second_number == 0:
-            raise ZeroDivisionError
-    except ZeroDivisionError:
-        print('Делитель не может быть 0, пожалуйста, введите другое число')
-        continue
+        if option == 4 and second_number == 0:
+            print('Делитель не может быть 0, пожалуйста, введите другое число')
+            continue
     except ValueError:
-        print('Это не число')
+        print('Это не число, пожалуйста, введите число')
         continue
     break
 
-res = calculation(option_input, first_number, second_number)
+res = calculation(option, first_number, second_number)
