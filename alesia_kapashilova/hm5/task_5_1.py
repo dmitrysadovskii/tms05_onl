@@ -8,20 +8,19 @@ for i in range(count_pov):
     hidden_number += choice(range_num)
 n = 0
 while n < 6:
-    my_num = input("Введи четырёхзначное число: ")
-    if len(my_num) != 4:
+    num = input("Введи четырёхзначное число: ")
+    if len(num) != 4:
         print("И что ты ввел?")
         continue
     n += 1
     bull = 0
     cow = 0
     for i in range(4):
-        if hidden_number[i] == my_num[i]:
+        if hidden_number[i] == num[i]:
             bull += 1
-        elif my_num[i] in hidden_number:
+        elif num[i] in hidden_number:
             cow += 1
-    print(
-        my_num + ' содержит ' + str(bull) + ' быка и ' + str(cow) + ' коровы')
+    print(num + ' содержит ' + str(bull) + ' быка и ' + str(cow) + ' коровы')
     if bull == 4:
         print('Вы выиграли!')
         break

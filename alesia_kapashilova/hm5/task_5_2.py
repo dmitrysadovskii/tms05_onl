@@ -1,41 +1,30 @@
-def eng():
-    array = input('Write list of people: ')
-    array = array.split()
-    count = len(array)
-    if count == 0:
-        print("No one likes this")
-    elif count < 2:
-        print(f"{array[0]} likes this")
-    elif count < 3:
-        print(f"{array[0]} and {array[1]} like this")
-    elif count < 4:
-        print(f"{array[0]}, {array[1]} and {array[2]} like this")
-    elif count >= 4:
-        count = count - 2
-        print(f"{array[0]}, {array[1]} and {count} other like this")
-
-
-def rus():
-    array = input('Введите имена людей: ')
-    array = array.split()
-    count = len(array)
-    if count == 0:
-        print("Никому не понравилось")
-    elif count < 2:
-        print(f"{array[0]} это понравилось")
-    elif count < 3:
-        print(f"{array[0]} и {array[1]} это понравилось")
-    elif count < 4:
-        print(f"{array[0]}, {array[1]} и {array[2]} это понравилось")
-    elif count >= 4:
-        count = count - 2
-        print(f"{array[0]}, {array[1]} и {count} другим это понравилось")
-
-
-mydict = {1: eng, 2: rus}
-choices = list(map(int, input("Do you want to: \n(1)Eng \n(2)Rus\n").split()))
-for choice in choices:
-    if 0 < choice < 3:
-        mydict[choice]()
+def like(*args):
+    if len(args) > 0 and (1072 <= ord(args[0][0].lower()) <= 1103):
+        language = 'ru'
     else:
-        print("That is not between 1 and 2! Try again:")
+        language = 'en'
+    if len(args) == 0:
+        print('No one likes this')
+    elif len(args) == 1:
+        if language == 'en':
+            print(f'{args[0]} likes this')
+        else:
+            print(f'{args[0]} это понравилось')
+    elif len(args) == 2:
+        if language == 'en':
+            print(f'{args[0]} and {args[1]} like this')
+        else:
+            print(f'{args[0]} и {args[1]} это понравилось')
+    elif len(args) == 3:
+        if language == 'en':
+            print(f'{args[0]}, {args[1]} and {args[2]} like this')
+        else:
+            print(f'{args[0]}, {args[1]} и {args[2]}  это понравилось')
+    else:
+        if language == 'en':
+            print(f'{args[0]}, {args[1]} and {len(args[2:])} others like this')
+        else:
+            print(f'{args[0]}, {args[1]} и еще {len(args[2:])} '
+                  f'другим понравилось это')
+
+like("Алеся, Катя")
