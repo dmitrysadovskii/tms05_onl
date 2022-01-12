@@ -16,7 +16,7 @@ while True:
     try:
         option = int(input('1. Сложение\n2. Вычитание\n3. Умножение\n'
                            '4. Деление\nВведите номер пункта меню:\n'))
-        if option < 1 or option > 4:
+        if not 1 <= option <= 4:
             print('Введите число от 1 до 4: ')
             continue
     except ValueError:

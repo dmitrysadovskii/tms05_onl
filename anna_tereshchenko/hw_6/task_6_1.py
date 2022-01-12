@@ -22,12 +22,9 @@ def luna_algorithm(card_number) -> bool:
 
 
 def validate_user_input(user_input: str) -> bool:
-    s = []
     if len(user_input) > 0:
         for k in user_input:
-            if k in '0123456789':
-                s.append(k)
-            else:
+            if k not in '0123456789':
                 print('Вы ввели не число')
                 return False
     else:
