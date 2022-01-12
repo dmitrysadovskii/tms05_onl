@@ -1,11 +1,13 @@
 def reshape(arr1: list, elem_string: int, elem_count: int) -> list:
     m_size = elem_string * elem_count
     if m_size > len(arr1):
-        print('Размер матрицы не соответсвует количеству переданных элементов в массиве')
+        print('Размер матрицы не соответсвует количеству '
+              'переданных элементов в массиве')
         return []
     arr2 = []
     for i in range(elem_string):
-        arr2.append([arr1[k] for k in range(elem_count * i, (elem_count * i + elem_count))])
+        arr2.append([arr1[k] for k in range(elem_count * i,
+                    (elem_count * i + elem_count))])
 
     if m_size != len(arr1):
         arr2.append(arr1[m_size:])
