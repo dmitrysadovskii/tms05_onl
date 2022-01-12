@@ -2,6 +2,7 @@ array = input('Write list of people: ')
 array = array.split()
 count = len(array)
 
+
 def eng():
     global count
     if count == 0:
