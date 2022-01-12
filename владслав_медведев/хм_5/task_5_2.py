@@ -8,7 +8,6 @@ likes("Ann", "Alex", "Mark", "Max") -> "Ann, Alex and 2 others like this"
 '''
 
 
-def eng()
 def eng(choices):
     choices = choices.split()
     count = len(choices)
@@ -43,7 +42,8 @@ def rus(choices):
               f" {count} другим это понравилось")
 
 
-list_eng = 'a, b, c, d, e, f, g, h,i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z'
+list_eng = 'a, b, c, d, e, f, g, h,i, j, k, l, m, n,' \
+           ' o, p, q, r, s, t, u, v, w, x, y, z'
 choices = input("Введите имена людей:/ Write list of people: ")
 for i in choices:
     if i.lower() in list_eng:
@@ -54,4 +54,3 @@ for i in choices:
         choice = 2
         rus(choices)
         break
-
