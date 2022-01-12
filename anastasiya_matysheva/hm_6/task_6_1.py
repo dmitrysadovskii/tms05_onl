@@ -11,7 +11,7 @@ def luhn(code):
 
 
 card_numb = input('Please, enter credit card number: ')
-opt = re.compile("[ -\/:-@\[-\`{-~ \t]")
+opt = re.compile("[ -\\/:-@\\[-\\`{-~ \t]")
 
 if opt.search(card_numb):
     print('Please, enter credit card number without space or special simbol')
