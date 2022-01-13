@@ -36,7 +36,7 @@ if result_validates == 1:
                 break
             if number_card[count_even] == i:
                 count_even += 2
-                new_even = int(i)*2
+                new_even = int(i) * 2
                 if new_even > 9:
                     new_even = new_even - 9
                 even_validate += str(new_even)
@@ -66,7 +66,7 @@ if result_validates == 1:
                 break
             if number_card[count_odd] == i:
                 count_odd += 2
-                new_odd = int(i)*2
+                new_odd = int(i) * 2
                 if new_odd > 9:
                     new_odd = new_odd - 9
                 odd_validate += str(new_odd)

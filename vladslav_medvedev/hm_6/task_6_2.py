@@ -11,7 +11,7 @@
 message = str(input("Please, write sting: "))
 count = 1
 x = 1
-j = message[x:x+1]
+j = message[x:x + 1]
 for i in message:
     if i in j:
         count += 1
