@@ -12,8 +12,8 @@ result_validate = 0
 def validate(result_validate):
     if number_card != ' ' and not number_card.isdigit():
         print('Number was entered incorrectly!')
-    else :
-         result_validate += 1
+    else:
+        result_validate += 1
     return result_validate
 
 
@@ -30,12 +30,12 @@ if result_validates == 1:
     if len(number_card) % 2 == 0:
         count_even = 0
         even_validate = ''
-        number_card = number_card +' '
+        number_card = number_card + ' '
         for i in number_card:
             if i == ' ':
                 break
             if number_card[count_even] == i:
-                count_even +=2
+                count_even += 2
                 new_even = int(i)*2
                 if new_even > 9:
                     new_even = new_even - 9
@@ -50,7 +50,7 @@ if result_validates == 1:
             i = int(i)
             if i >= 0:
                 sum_validate_even += i
-        for i in range(1,2):
+        for i in range(1, 2):
             if sum_validate_even % 10 == 0:
                 print('Card entered correctly! Thank you.')
                 break
@@ -60,12 +60,12 @@ if result_validates == 1:
     else:
         count_odd = 1
         odd_validate = ''
-        number_card = number_card +' '
+        number_card = number_card + ' '
         for i in number_card:
             if i == ' ':
                 break
             if number_card[count_odd] == i:
-                count_odd +=2
+                count_odd += 2
                 new_odd = int(i)*2
                 if new_odd > 9:
                     new_odd = new_odd - 9

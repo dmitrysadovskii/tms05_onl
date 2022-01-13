@@ -1,6 +1,7 @@
 '''
 Простейший калькулятор v0.1
-Реализуйте программу, которая спрашивала у пользователя, какую операцию он хочет произвести над числами,
+Реализуйте программу, которая спрашивала у пользователя, какую операцию
+он хочет произвести над числами,
 а затем запрашивает два числа и выводит результат
 Проверка деления на 0.
 Пример
@@ -13,13 +14,13 @@
 result_validate_one, result_validate_two = 0, 0
 
 
-def validate(variable_number_one,variable_number_two,result_validate_one,
+def validate(variable_number_one, variable_number_two, result_validate_one,
              result_validate_two):
     if variable_number_one != ' ' and not variable_number_one.isdigit():
         print('The first number was entered incorrectly!')
-    else :
-         result_validate_one += 1
-         print('The first number is entered correctly!')
+    else:
+        result_validate_one += 1
+        print('The first number is entered correctly!')
 
     if variable_number_two != ' ' and not variable_number_two.isdigit():
         print('The second number is entered incorrectly!')
@@ -60,7 +61,7 @@ num_for_validate_one, num_for_validate_two = validate(variable_number_one,
                                                       result_validate_one,
                                                       result_validate_two)
 sum_num_for_validate = num_for_validate_one + num_for_validate_two
-if  sum_num_for_validate == 2:
+if sum_num_for_validate == 2:
     print(calculator(operation, variable_number_one, variable_number_two))
 else:
     print('Numbers entered incorrectly')
