@@ -10,9 +10,8 @@ class Bank:
         self.percent = percent
 
     def deposit(self, investment: Investment):
-        result = investment.sum_of_investment * \
-                 pow((1 + self.percent / 1200),
-                     investment.investment_term * 12)
+        result = investment.sum_of_investment *\
+            pow((1 + self.percent / 1200), investment.investment_term * 12)
         result = round(result, 2)
         print(f'Сумма депозита через {investment.investment_term} '
               f'год/a = {result}')
