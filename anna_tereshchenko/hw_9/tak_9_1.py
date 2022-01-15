@@ -35,7 +35,7 @@ class User:
 
     def reserve_book(self, book: Book):
         if book.status == BookStatuses.Available:
-            book.status = BookStatuses.Taken
+            book.status = BookStatuses.Booked
             self.books.append(book)
             print(f'The {book.book_name} book have been reserved by '
                   f'{self.name}')
@@ -59,3 +59,5 @@ user1.take_book(book2)
 user2 = User('Dima')
 user2.take_book(book2)
 user1.return_book(book2)
+user3 = User('Alex')
+user3.reserve_book(book1)
