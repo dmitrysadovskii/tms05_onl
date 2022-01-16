@@ -13,8 +13,8 @@ def get_words_length(some_string: str) -> list:
     :param some_string: some string with elements containing letters.
     :return: list of numbers identifying the length of each word.
     """
-    return [len(word) for word in some_string.split() if word != 'the' and
-            any([symbol.isalpha() for symbol in word])]
+    return [len(word) for word in some_string.split() if word != 'the'
+            and any([symbol.isalpha() for symbol in word])]
 
 
 print(get_words_length(" thequick brown fox jumps over the lazy dog"))
