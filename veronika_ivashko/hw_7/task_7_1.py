@@ -36,7 +36,7 @@ def reshape(some_numbers: list, num_rows: int, num_cols: int) -> list:
 
     prev_i = 0
     result_matrix = []
-    for i in range(num_cols, actual_length+1, num_cols):
+    for i in range(num_cols, actual_length + 1, num_cols):
         result_matrix.append(some_numbers[prev_i:i])
         prev_i = i
     return result_matrix

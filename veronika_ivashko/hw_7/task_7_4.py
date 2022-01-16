@@ -32,8 +32,8 @@ def caesar_cipher(message: str, shift: int) -> str:
     :return: encrypted / decrypted message.
     """
     languages = {
-        'en': [chr(i) for i in range(ord('a'), ord('z')+1)],
-        'rus': [chr(i) for i in range(ord('а'), ord('я')+1)]
+        'en': [chr(i) for i in range(ord('a'), ord('z') + 1)],
+        'rus': [chr(i) for i in range(ord('а'), ord('я') + 1)]
     }
     range_of_numbers = [str(i) for i in range(10)]
 
@@ -90,7 +90,7 @@ def caesar_cipher(message: str, shift: int) -> str:
 # print(caesar_cipher('  2  hi - , W woRLldza', -5))
 # print(caesar_cipher('а    фhi - , W woRLldza ! привет moy svet', -65))
 
-original_message = 'Привет moy svet!'
+original_message = 'Привет, moy svet!'
 encrypted_message = caesar_cipher(original_message, 5)
 decrypted_message = caesar_cipher(encrypted_message, -5)
 print(f'Original message: {original_message}')
