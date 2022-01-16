@@ -1,9 +1,12 @@
-def only_numbers(num: str) -> bool:
-    if num == '':
+def is_number(num: str) -> bool:
+    if not num:
         print('Вы ничего не ввели!')
         return False
     else:
-        return num.isdigit()
+        if not num.isdigit():
+            print(f'Можно вводить только цифры, Вы ввели {card_input}')
+        else:
+            return num.isdigit()
 
 
 def logic(array, el):
@@ -13,7 +16,7 @@ def logic(array, el):
     else:
         res = el * 2
     array.append(res)
-    return True
+    return array
 
 
 def validation(card_number):
@@ -48,7 +51,7 @@ def validation(card_number):
 
 while True:
     card_input = input('Введите номер карты: ')
-    just_numbers = only_numbers(card_input)
+    just_numbers = is_number(card_input)
     if just_numbers:
         valid_or_invalid = validation(card_input)
         if valid_or_invalid:
