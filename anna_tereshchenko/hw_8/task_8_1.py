@@ -6,11 +6,10 @@ def typed(type):
             if type == 'int':
                 for i in args:
                     casted_args.append(float(i))
-                return func(*casted_args)
             elif type == 'str':
                 for i in args:
                     casted_args.append(str(i))
-                return func(*casted_args)
+            return func(*casted_args)
         return wrapper
     return decorator
 
