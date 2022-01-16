@@ -1,18 +1,16 @@
 def typed(type):
     def decorator(func):
         def wrapper(*args):
+            casted_args = []
+            assert type in ('int', 'str'), 'Передан неверный тип'
             if type == 'int':
-                b = []
                 for i in args:
-                    b.append(float(i))
-                return func(*b)
+                    casted_args.append(float(i))
+                return func(*casted_args)
             elif type == 'str':
-                c = []
                 for i in args:
-                    c.append(str(i))
-                return func(*c)
-            else:
-                print('Передан неверный тип')
+                    casted_args.append(str(i))
+                return func(*casted_args)
         return wrapper
     return decorator
 

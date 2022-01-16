@@ -33,9 +33,7 @@ def sort_number_names(arr_names: list):
 def string_validation(user_input: str) -> bool:
     user_input_int = []
     for k in user_input:
-        if k in '0123456789 ':
-            pass
-        else:
+        if k not in '0123456789 ':
             print('Строка содержит не только положительные числа и пробелы')
             return False
     user_input = user_input.split()
@@ -59,6 +57,5 @@ while True:
     is_valid = string_validation(user_input)
     if not is_valid:
         continue
-    else:
-        print(sort_number_names(user_input))
+    print(sort_number_names(user_input))
     break
