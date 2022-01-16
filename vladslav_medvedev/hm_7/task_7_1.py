@@ -7,7 +7,7 @@ reshape([1, 2, 3, 4, 5, 6], 2, 3) =>
     [1, 2, 3],
     [4, 5, 6]
 ]
-reshape([1, 2, 3, 4, 5, 6, 7, 8,], 4, 2) =>
+reshape([1, 2, 3, 4, 5, 6, 7, 8], 4, 2) =>
 [
     [1, 2],
     [3, 4],
@@ -28,4 +28,4 @@ def reshape(array_1: list, row, column) -> list:
     return matrix_result
 
 print(reshape([1, 2, 3, 4, 5, 6], 2, 3))
-print(reshape([1, 2, 3, 4, 5, 6, 7, 8,], 4, 2))
+print(reshape([1, 2, 3, 4, 5, 6, 7, 8], 4, 2))
