@@ -41,7 +41,7 @@ def uncodding_func(alphabet, cypher_result, uncypher):
 
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
-signs = ",.;:!?\)(/"
+signs = ",.;:!?)(/"
 cypher = 'hello world!'
 uncypher = 'ymnx nx f yjxy xywnsl'
 cypher_result = ''
