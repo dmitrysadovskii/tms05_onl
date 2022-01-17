@@ -15,7 +15,8 @@ def check_card():
     opt = re.compile("[ -\\/:-@\\[-\\`{-~ \t]")
 
     if opt.search(card_numb):
-        print('Please, enter credit card number without space or special simbol')
+        print('Please, enter credit card number'
+              ' without space or special simbol')
     elif card_numb.islower():
         print('Please, enter only numbers')
     elif len(card_numb) > 16:
