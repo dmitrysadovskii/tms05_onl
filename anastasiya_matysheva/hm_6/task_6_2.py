@@ -9,7 +9,6 @@ def calc_repeated_char(string):
     return count
 
 
-
 def create_result_string(repeated_dict):
     result_string = ""
     for key in repeated_dict:
@@ -20,6 +19,7 @@ def create_result_string(repeated_dict):
             result_string += str(repeated_dict[key])
 
     return result_string
+
 
 def run():
     string = input("Write string : ")
