@@ -10,19 +10,24 @@ def luhn(code):
     return (evens + odds) % 10 == 0
 
 
-card_numb = input('Please, enter credit card number: ')
-opt = re.compile("[ -\\/:-@\\[-\\`{-~ \t]")
+def check_card():
+    card_numb = input('Please, enter credit card number: ')
+    opt = re.compile("[ -\\/:-@\\[-\\`{-~ \t]")
 
-if opt.search(card_numb):
-    print('Please, enter credit card number without space or special simbol')
-elif card_numb.islower():
-    print('Please, enter only numbers')
-elif len(card_numb) > 16:
-    print('Please, enter no more than 16 numbers')
-elif not card_numb:
-    print('Please, enter credit card number')
-else:
-    if luhn(card_numb):
-        print('Credit card is valid')
+    if opt.search(card_numb):
+        print('Please, enter credit card number'
+              ' without space or special simbol')
+    elif card_numb.islower():
+        print('Please, enter only numbers')
+    elif len(card_numb) > 16:
+        print('Please, enter no more than 16 numbers')
+    elif not card_numb:
+        print('Please, enter credit card number')
     else:
-        print('Credit card invalid')
+        if luhn(card_numb):
+            print('Credit card is valid')
+        else:
+            print('Credit card invalid')
+
+
+check_card()
