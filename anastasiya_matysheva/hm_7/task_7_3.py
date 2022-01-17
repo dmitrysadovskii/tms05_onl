@@ -26,4 +26,3 @@ def cezar_code(string, number, dec, lang):
 print(cezar_code(input('Enter world: '), int(input('Enter the step: ')),
                  input('Choose decode or encode (enter "dec" or "enc"): '),
                  input('Choose english or russian (enter "en" or "ru"); ')))
-
