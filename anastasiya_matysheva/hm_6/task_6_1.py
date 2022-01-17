@@ -4,7 +4,7 @@ import re
 
 def luhn(code):
     look_up = (0, 2, 4, 6, 8, 1, 3, 5, 7, 9)
-    code = reduce(str.__add__,filter(str.isdigit, code))
+    code = reduce(str.__add__, filter(str.isdigit, code))
     evens = sum(int(i) for i in code[-1::-2])
     odds = sum(look_up[int(i)] for i in code[-2::-2])
     return (evens + odds) % 10 == 0
