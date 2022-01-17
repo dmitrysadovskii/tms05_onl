@@ -15,6 +15,8 @@ reshape([1, 2, 3, 4, 5, 6, 7, 8], 4, 2) =>
     [7, 8]
 ]
 '''
+
+
 def reshape(array_1: list, row, column) -> list:
     matrix_size = row * column
     if matrix_size > len(array_1):
@@ -26,6 +28,7 @@ def reshape(array_1: list, row, column) -> list:
         matrix_result.append(array_1[prev_i:i])
         prev_i = i
     return matrix_result
+
 
 print(reshape([1, 2, 3, 4, 5, 6], 2, 3))
 print(reshape([1, 2, 3, 4, 5, 6, 7, 8], 4, 2))

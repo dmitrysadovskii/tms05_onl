@@ -4,6 +4,8 @@ numbers = [34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7]
 и возвращает новый список только с положительными числами
 '''
 numbers = [34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7]
+
+
 def gen_numbers(numbers):
     n = 0
     for i in numbers:
@@ -15,6 +17,7 @@ def gen_numbers(numbers):
             numbers.insert(n, a)
             n += 1
     return numbers
+
 
 print(gen_numbers(numbers))
 
@@ -31,5 +34,5 @@ def sentences():
     arr = [len(i) for i in sentence.split() if i != 'the']
     return arr
 
-print(sentences())
 
+print(sentences())

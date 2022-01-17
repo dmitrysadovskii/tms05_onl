@@ -10,10 +10,10 @@ this is a test string -> ymnx nx f yjxy xywnsl
 '''
 
 
-def codding_func(alphabet, cypher_result,cypher):
+def codding_func(alphabet, cypher_result, cypher):
     alphabet = alphabet * 3
-    #Строку увеличил для того чтобы если индекс введенного
-    #значения будет больше длинны алфавита!
+    # Строку увеличил для того чтобы если индекс введенного
+    # значения будет больше длинны алфавита!
     for i in cypher:
         if i == ' ' or i == cypher.isalpha():
             cypher_result += i
@@ -26,7 +26,7 @@ def codding_func(alphabet, cypher_result,cypher):
     return cypher_result
 
 
-def uncodding_func(alphabet,cypher_result,uncypher):
+def uncodding_func(alphabet, cypher_result, uncypher):
     alphabet = alphabet * 3
     for i in uncypher:
         if i == ' ' or i == uncypher.isalpha():
@@ -41,9 +41,9 @@ def uncodding_func(alphabet,cypher_result,uncypher):
 
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
-signs = ",.;:!?)(\/"
+signs = ",.;:!?\)(/"
 cypher = 'hello world!'
 uncypher = 'ymnx nx f yjxy xywnsl'
 cypher_result = ''
-print(codding_func(alphabet, cypher_result,cypher))
-print(uncodding_func(alphabet, cypher_result,uncypher))
+print(codding_func(alphabet, cypher_result, cypher))
+print(uncodding_func(alphabet, cypher_result, uncypher))
