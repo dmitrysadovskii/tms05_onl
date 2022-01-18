@@ -20,6 +20,9 @@ def calculator(act, num1, num2):
 
 action = input("Choose action:\n 1. Addition\n 2. Subtraction\n"
                " 3. Multiplication\n 4. Division\nEnter menu number: ")
+assert action.isdigit(), "incorrect menu number value is entered"
 number1 = input("Enter the first number: ")
+assert number1.isdigit(), "incorrect first number value is entered"
 number2 = input("Enter the second number: ")
+assert number2.isdigit(), "incorrect second number value is entered"
 print(calculator(action, number1, number2))
