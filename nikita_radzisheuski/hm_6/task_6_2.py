@@ -17,7 +17,7 @@ for i in thestring:
 def power(d):
     for i in d:
         if d[i] >= 2:
-            print(str(i)+str(d[i]), end='')
+            print(str(i) + str(d[i]), end='')
         else:
             print(i, end='')
 
