@@ -4,7 +4,7 @@ def decorator(func):
                         5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine',
                         10: 'ten', 11: 'eleven', 12: 'twelve', 13: 'thirteen',
                         14: 'fourteen', 15: 'fifteen', 16: 'sixteen',
-                        17: 'seventeen',  18: 'eighteen', 19: 'nineteen'}
+                        17: 'seventeen', 18: 'eighteen', 19: 'nineteen'}
         sorted_values = sorted(number_names.values())
         sorted_number_names = {}
         list_int_args = [int(i) for i in arg1.split(' ')]
