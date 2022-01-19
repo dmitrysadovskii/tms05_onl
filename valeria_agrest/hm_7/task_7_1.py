@@ -6,7 +6,6 @@ def reshape(list_1: list, num_1: int, num_2: int) -> list:
             part = list_1[:num_2]
             array.append(part)
             list_1 = list_1[num_2:]
-            i += 1
         array.append(list_1)
         return array
 
