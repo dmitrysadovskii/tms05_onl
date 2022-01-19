@@ -26,10 +26,10 @@ def generate_sequnce():
 
 def func(input_list):
     ev = generate_sequnce()
-    for i in range(len(input_list)-1):
+    for i in range(len(input_list) - 1):
         for j in range(len(input_list) - i - 1):
             if ev.index(input_list[j]) > ev.index(input_list[j] + 1):
-                input_list[j], input_list[j+1] = input_list[j+1], input_list[j]
+                input_list[j], input_list[j + 1] = input_list[j + 1], input_list[j]
 
     return input_list
 
