@@ -1,7 +1,7 @@
 alphabetEN = '''ABCDEFGHIJKLMNOPQRSTUVWX 
-             YZABCDEFGHIJKLMNOPQRSTUVWXYZ'''
-alphabetRU = '''АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦ 
-             ЧШЩЪЫЬЭЮЯАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'''
+YZABCDEFGHIJKLMNOPQRSTUVWXYZ'''
+alphabetRU = '''АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦ
+ЧШЩЪЫЬЭЮЯАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'''
 offset = int(input('Step: '))
 message = input("Message: ").upper()
 result = ''
