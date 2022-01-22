@@ -38,6 +38,7 @@ def typed(type):
 def add_two_symbols(a, b):
     return a + b
 
+
 print(add_two_symbols("3", 5))
 print(add_two_symbols(5, 5))
 print(add_two_symbols('a', 'b'))
@@ -46,6 +47,7 @@ print(add_two_symbols('a', 'b'))
 @typed(type='int')
 def add_three_symbols(a, b, с):
     return a + b + с
+
 
 print(add_three_symbols(5, 6, 7))
 print(add_three_symbols("3", 5, 0))
