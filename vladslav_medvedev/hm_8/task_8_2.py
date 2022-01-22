@@ -18,11 +18,11 @@ for test_1: 11 1 2 3 4
         el on tw th fo
 for test_2: 10 11 12 18 0 3 9
 """
-number_names = { 0: 'zero', 1: 'one', 2: 'two', 3: 'three', 4: 'four',
-        5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine',
-        10: 'ten', 11: 'eleven', 12: 'twelve',
-        13: 'thirteen', 14: 'fourteen', 15: 'fifteen', 16: 'sixteen',
-        17: 'seventeen', 18: 'eighteen', 19: 'nineteen'}
+number_names = {0: 'zero', 1: 'one', 2: 'two', 3: 'three', 4: 'four',
+                5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine',
+                10: 'ten', 11: 'eleven', 12: 'twelve',
+                13: 'thirteen', 14: 'fourteen', 15: 'fifteen', 16: 'sixteen',
+                17: 'seventeen', 18: 'eighteen', 19: 'nineteen'}
 
 
 def sort(string):
