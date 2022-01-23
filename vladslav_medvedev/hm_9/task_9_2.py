@@ -28,6 +28,7 @@ class Bank:
         print(f'Сумма депозита через {investment.term_invest} '
               f'месяц/а = {result}')
 
+
 investment = Investments(1000, 12)
 bank = Bank(10)
 bank.deposit(investment)
