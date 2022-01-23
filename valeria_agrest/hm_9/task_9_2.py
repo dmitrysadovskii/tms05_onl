@@ -20,7 +20,7 @@ class Bank:
             percent_in_one_month = invest.percent / 12
             for i in range(1, period_in_months + 1):
                 new_summa = invest.summa + \
-                            (invest.summa * percent_in_one_month) / 100
+                        (invest.summa * percent_in_one_month) / 100
                 invest.summa = round(new_summa, 2)
             print(f'Summa will be {invest.summa}')
 

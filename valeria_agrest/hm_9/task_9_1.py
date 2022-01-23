@@ -48,7 +48,7 @@ class User:
                 print(f'Thank you for bringing back {a_book.book}')
 
 
-book = Book('A Walk to Remember', 'Nicholas Sparks', 240, 0-446-60895-5, 0, 0)
+book = Book('A Walk to Remember', 'Nicholas Sparks', 240, 'ISBN_1', 0, 0)
 User1 = User()
 User1.book_to_take(book)
 User1.take_book()
