@@ -1,11 +1,13 @@
-alphabetEN = '''ABCDEFGHIJKLMNOPQRSTUVWX 
+alphabetEN = '''ABCDEFGHIJKLMNOPQRSTUVWX/
 YZABCDEFGHIJKLMNOPQRSTUVWXYZ'''
-alphabetRU = '''АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦ
+
+alphabetRU = '''АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦ/
 ЧШЩЪЫЬЭЮЯАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'''
 offset = int(input('Step: '))
 message = input("Message: ").upper()
 result = ''
-lang = input('Enter language RU/EN: ')
+
+lang = input('Enter language RU/EN:')
 if lang == 'RU':
     for i in message:
         place = alphabetRU.find(i)
