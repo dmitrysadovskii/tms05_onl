@@ -88,4 +88,3 @@ class Visitor:
             print(f'Book {book.name} was returned by {self.name}.')
         else:
             print(f'You did not get the book {book.name}.')
-

@@ -31,7 +31,7 @@ class Bank:
         """
         total_amount = investment.amount
         for month in range(deposit_period_month):
-            total_amount *= (1 + deposit_rate/100)
+            total_amount *= (1 + deposit_rate / 100)
         return total_amount
 
 
