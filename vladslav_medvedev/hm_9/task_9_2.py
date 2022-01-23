@@ -21,7 +21,7 @@ class Bank:
     def __init__(self, percent):
         self.percent = percent
 
-    def deposit(self, investments: Investments):
+    def deposit(self, investment: Investments):
         result = investment.sum_invest * pow((1 + self.percent / 1200),
                                              investment.term_invest)
         result = round(result, 2)
