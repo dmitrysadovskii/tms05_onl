@@ -30,8 +30,8 @@ class Book:
         :param visitor: specify visitor which may have list of reserved books.
         :return: True if book is available to take for a specified visitor.
         """
-        if self in visitor.books_reserved or (not self.is_taken
-                                              and not self.is_reserved):
+        if self in visitor.books_reserved or \
+                (not self.is_taken and not self.is_reserved):
             return True
 
 
