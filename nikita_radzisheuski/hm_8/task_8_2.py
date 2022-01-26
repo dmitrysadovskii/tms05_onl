@@ -1,15 +1,17 @@
 
-"""Creating dictionary. Keys are integer numbers that will be used for comparing
- with entered numbers. This dict will be sorted by values.
+"""Creating dictionary. Keys are integer numbers that will be used for
+comparing with entered numbers. This dict will be sorted by values.
 """
-dictionary_of_nums = {0: 'zero', 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six',
-                      7: 'seven', 8: 'eight', 9: 'nine', 10: 'ten', 11: 'eleven', 12: 'twelve',
-                      13: 'thirty', 14: 'fourteen', 15: 'fifteen', 16: 'sixteen', 17: 'seventeen',
-                      18: 'eighteen', 19: 'nineteen'}
+dictionary_of_nums = {0: 'zero', 1: 'one', 2: 'two', 3: 'three', 4: 'four',
+                      5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine',
+                      10: 'ten', 11: 'eleven', 12: 'twelve', 13: 'thirty',
+                      14: 'fourteen', 15: 'fifteen', 16: 'sixteen',
+                      17: 'seventeen', 18: 'eighteen', 19: 'nineteen'}
 
 
 def sort_numbers(take_function):
-    """Creating function for sorting entered numbers. We wrap nums using dictionary of nums"""
+    """Creating function for sorting entered numbers.
+    We wrap nums using dictionary of nums"""
     def wrap_function(numbers):
         for i in range(len(numbers)):
             numbers[i] = int(numbers[i])
