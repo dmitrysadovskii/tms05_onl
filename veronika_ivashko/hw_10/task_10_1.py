@@ -111,10 +111,12 @@ class Bouquet:
         :param flower_to_find: flower name to find.
         :return: boolean.
         """
-        return any([item.flower_name.lower() == flower_to_find.lower()
-                    for item in self.items_in_bouquet
-                    if isinstance(item, CutFlower)
-                    or isinstance(item, PottedFlower)])
+        flowers_list = []
+        for item in self.items_in_bouquet:
+            if isinstance(item, CutFlower) or isinstance(item, PottedFlower):
+                item_check = item.flower_name.lower() == flower_to_find.lower()
+                flowers_list.append(item_check)
+        return any(flowers_list)
 
     def find_flowers_by_attribute(self, attribute_name, attribute_value):
         """
@@ -124,14 +126,19 @@ class Bouquet:
         :param attribute_value: value of the attribute for searching.
         :return: list of flowers` name which meet specified condition.
         """
-        return [item.flower_name for item in self.items_in_bouquet
-                # check if item has this attribute, otherwise > error:
-                if hasattr(item, attribute_name)
-                # check if item has flower_name, otherwise can not display it:
-                and hasattr(item, 'flower_name')
-                # check if attribute value is equal to the target one:
-                and getattr(item, attribute_name).lower() ==
-                attribute_value.lower()]
+        flowers_list = []
+        for item in self.items_in_bouquet:
+            # check if item has this attribute, otherwise > error:
+            attr_is_present = hasattr(item, attribute_name)
+            # check if item has flower_name, otherwise can not display it:
+            name_is_present = hasattr(item, 'flower_name')
+            # check if attribute value is equal to the target one:
+            if attr_is_present:
+                actual_value = getattr(item, attribute_name)
+                name_is_valid = actual_value.lower() == attribute_value.lower()
+                if attr_is_present and name_is_present and name_is_valid:
+                    flowers_list.append(item.flower_name)
+        return flowers_list
 
     def sort_flowers_by_attribute(self, attribute_name, ascending=True):
         """
