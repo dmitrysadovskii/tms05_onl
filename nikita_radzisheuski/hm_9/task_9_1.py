@@ -19,17 +19,19 @@ class Book:
         self.reserved = reserved
         Book.books_count += 1
 
+
 book_1 = Book("Neznayka", "Somebody", 505, 978-3-16-148410-0, "BY", False)
 book_2 = Book("A Byte of Python", "Swaroop C H", 164, 978-5-16-122410-0, "US", False)
 book_3 = Book("Neznayka2", "Somebody", 505, 978-3-16-148410-0, "BY", False)
-#print(book_1)
 print(Book.books_count)
+
 
 class User:
     def get_book(self):
         pass
+
     def return_book(self):
         pass
+
     def book_a_book(self):
         pass
-
