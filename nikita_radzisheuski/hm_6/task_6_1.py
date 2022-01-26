@@ -5,7 +5,7 @@ CHECK USING LUNA ALGORITHM
 
 from functools import reduce
 
-
+"""Checking if the entered number is integer"""
 while True:
     try:
         enter_cc_creds = str(int(input("Enter CC number: ")))
@@ -13,6 +13,8 @@ while True:
             break
     except ValueError:
         print("You must enter valid CC number, not letters or spaces.")
+
+"""Function using algorithm louna to check Credit card number validity"""
 
 
 def louna(enter_cc_creds):
