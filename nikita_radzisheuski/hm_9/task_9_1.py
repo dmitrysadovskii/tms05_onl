@@ -21,10 +21,10 @@ class Book:
         Book.books_count += 1
 
 
-book_1 = Book("Neznayka", "Somebody", 505, 978-3-16-148410-0, "BY", False)
-book_2 = Book("A Byte of Python", "Swaroop C H", 164, 978-5-16-122410-0,
+book_1 = Book("Neznayka", "Somebody", 505, "978-3-16-148410-0", "BY", False)
+book_2 = Book("A Byte of Python", "Swaroop C H", 164, "978-5-16-122410-0",
               "US", False)
-book_3 = Book("Pobeg", "Somebody Else", 404, 922-3-16-148110-0, "EU", False)
+book_3 = Book("Pobeg", "Somebody Else", 404, "922-3-16-148110-0", "EU", False)
 print(Book.books_count)
 
 
