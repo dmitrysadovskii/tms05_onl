@@ -13,7 +13,8 @@ class Flowers:
 
     def __str__(self):
         return f'{self.flower_name}, {self.freshness} days of lifetime,' \
-               f'{self.flower_color} color, {self.stem_length} cm, {self.price}$'
+               f'{self.flower_color} color, {self.stem_length} cm, ' \
+               f'{self.price}$'
 
     @property
     def flower_name(self):
