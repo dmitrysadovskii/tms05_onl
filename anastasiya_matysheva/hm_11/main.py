@@ -3,8 +3,8 @@ import func
 
 def validation(x, y):
     try:
-        x_ = float(x)
-        y_ = float(y)
+        x = float(x)
+        y = float(y)
     except ValueError:
         raise TypeError('Invalid data type')
 
