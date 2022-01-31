@@ -51,7 +51,7 @@ class CalculatorMethods(AllMethods):
         if y != 0:
             return x / y
         else:
-            print(f'Division by zero is not supported.')
+            print('Division by zero is not supported.')
 
     @staticmethod
     def multiplication(x: (float, int), y: (float, int)) -> (float, int):
@@ -93,7 +93,7 @@ class Validation:
                 and user_choice in Validation.operations.keys():
             return True
         else:
-            print(f'Only provided operations are available.')
+            print('Only provided operations are available.')
 
     @staticmethod
     def check_input_number(user_number: str) -> bool:
