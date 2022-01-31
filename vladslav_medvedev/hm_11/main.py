@@ -35,7 +35,7 @@ class Calculator(func.Methods):
 
 
 calculator = Calculator()
-calculator.sum(10,2)
+calculator.sum(10, 2)
 calculator.diff(9, 3)
 calculator.mult(11, 2)
 calculator.devision(120, 20)
