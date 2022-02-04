@@ -7,33 +7,63 @@
 
 
 class Book:
-    """Class attribute for counting books"""
-    books_count = 0
-    """Creating class methods"""
-    def __init__(self, book_name, author, pages_quantity,
-                 isbn, flag, reserved):
-        self.book_name = book_name
+    """Class methods containing characteristics and statuses of the book"""
+
+    def __init__(self, book, author, pages, isbn, flag, reserved, taken):
+        self.book = book
         self.author = author
-        self.pages_quantity = pages_quantity
+        self.pages = pages
         self.isbn = isbn
         self.flag = flag
         self.reserved = reserved
-        Book.books_count += 1
+        self.taken = taken
 
 
-book_1 = Book("Neznayka", "Somebody", 505, "978-3-16-148410-0", "BY", False)
-book_2 = Book("A Byte of Python", "Swaroop C H", 164, "978-5-16-122410-0",
-              "US", False)
-book_3 = Book("Pobeg", "Somebody Else", 404, "922-3-16-148110-0", "EU", False)
-print(Book.books_count)
+class Guest:
+    def __init__(self):
+        self.books = list()
 
+    def book_to_take(self, book):
+        self.books.append(book)
 
-class User:
     def get_book(self):
-        pass
-
-    def return_book(self):
-        pass
+        for book in self.books:
+            if book.taken not in self.books and book.reserved is False:
+                print(f'You took <{book.book}>.')
+                book.taken = True
+            elif book.taken is False and book.reserved is True:
+                print(f'<{book.book}> is reserved by other person')
+            elif book.taken:
+                print(f'<{book.book}> is taken by other person')
 
     def book_a_book(self):
-        pass
+        for book in self.books:
+            if book.taken is False and book.reserved is False:
+                print(f'You reserved <{book.book}>.')
+                book.reserved = True
+            elif book.taken is True and book.reserved is not True:
+                print(f'<{book.book}> is taken by other person')
+            elif book.reserved:
+                print(f'<{book.book}> is reserved by other person')
+
+    def return_book(self):
+        for book in self.books:
+            if book.taken:
+                book.taken = False
+                print(f'You returned <{book.book}>')
+
+
+book1 = Book('Neznayka', 'Steven King', 505, "978-3-16-148410-0",
+             'EU', False, False)
+book2 = Book("A Byte of Python", "Swaroop C H", 164, "978-5-16-122410-0",
+             "USA", False, False)
+Guest1 = Guest()
+Guest2 = Guest()
+Guest3 = Guest()
+
+Guest1.book_to_take(book1)
+Guest1.get_book()
+Guest2.book_to_take(book1)
+Guest2.book_a_book()
+Guest3.book_to_take(book2)
+Guest3.book_a_book()
