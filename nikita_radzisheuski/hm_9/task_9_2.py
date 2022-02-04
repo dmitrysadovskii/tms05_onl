@@ -28,8 +28,8 @@ class Bank:
         for investment in self.investments:
             period_in_months = investment.years * 12
             for i in range(1, period_in_months + 1):
-                end_sum = investment.sum_in_rub + \
-                          (investment.sum_in_rub * (10/12)) / 100
+                end_sum = investment.sum_in_rub +\
+                          (investment.sum_in_rub * (10 / 12)) / 100
                 investment.sum_in_rub = round(end_sum, 3)
             print(f'Sum is {investment.sum_in_rub}')
 
