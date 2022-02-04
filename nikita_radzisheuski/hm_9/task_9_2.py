@@ -25,13 +25,12 @@ class Bank:
         and calculates end sum of deposit. Firstly the method converts years in
         quantity of month and then calculates by the formula:
         Rub+(Rub*(10%/12month)/100. The final num is rounded for 3 symbols"""
-        for investment in self.investments:
-            period_in_months = investment.years * 12
+        for inv in self.investments:
+            period_in_months = inv.years * 12
             for i in range(1, period_in_months + 1):
-                end_sum = investment.sum_in_rub +\
-                          (investment.sum_in_rub * (10 / 12)) / 100
-                investment.sum_in_rub = round(end_sum, 3)
-            print(f'Sum is {investment.sum_in_rub}')
+                end_sum = inv.sum_in_rub + (inv.sum_in_rub * (10 / 12)) / 100
+                inv.sum_in_rub = round(end_sum, 3)
+            print(f'Sum is {inv.sum_in_rub}')
 
 
 investment = Investment(7000, 3)
