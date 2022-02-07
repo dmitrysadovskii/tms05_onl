@@ -1,6 +1,7 @@
 def calculator():
     operations = ('+', '-', '*', '/', '=')
-    operation = input("select the type of mathematical operation: + ; - ; * ; / ; = - if complex expression:")
+    operation = input("select the type of mathematical operation:"
+                      " + ; - ; * ; / ; = - if complex expression:")
     if operation not in operations:
         print('choose one operation from the suggested ones!')
     if operation in ('+', '-', '*', '/'):
