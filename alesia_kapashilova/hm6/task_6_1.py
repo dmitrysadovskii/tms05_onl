@@ -43,7 +43,7 @@ while k < 2:
         if k == 2:
             pass
         else:
-            print(f'Последний шанс!')
+            print('Последний шанс!')
         continue
     else:
         result = luna_algorithm(user_card_input)
