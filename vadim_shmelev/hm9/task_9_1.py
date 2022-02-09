@@ -17,11 +17,12 @@ class Reader:
 
     def take_book(self):
         for correct_book in self.books:
-            if correct_book.taken not in self.books and correct_book.reserve == 0:
+            if correct_book.taken not in self.books\
+                    and correct_book.reserve == 0:
                 print(f'You take {correct_book.book}.')
                 correct_book.taken += 1
             elif correct_book.taken == 0 and correct_book.reserve != 0:
-                print(f'{correct_book.book} is reserved, choose another.')
+                print(f'{correct_book.book} is reserved, take another.')
 
     def reserve_book(self):
         for correct_book in self.books:
@@ -29,9 +30,10 @@ class Reader:
                 print(f'You reserved {correct_book.book}.')
                 correct_book.reserve += 1
             elif correct_book.taken != 0 and correct_book.reserve == 0:
-                print(f'{correct_book.book} already taken, choose another.')
+                print(f'{correct_book.book} already taken, take another.')
             elif correct_book.reserve != 0:
-                print(f'{correct_book.book} has already reserved, choose another.')
+                print(f'{correct_book.book} has already '
+                      f'reserved, take another.')
 
     def return_book(self):
         for correct_book in self.books:
@@ -40,7 +42,7 @@ class Reader:
                 print(f' you for bring back {correct_book.book}')
 
 
-test_book = Book('Cool book', 'N!_writer', 'isbn_1', 0, 0, 0)
+test_book = Book('Cool book', 'N_writer', 'isbn_1', 0, 0, 0)
 
 Reader1 = Reader()
 Reader1.book_to_take(test_book)
