@@ -9,8 +9,7 @@ class Decoration:
 
     @name.setter
     def name(self, value: str):
-        if not value:
-            raise AttributeError('Name must not be empty')
+        assert len(value), 'Name must not be empty'
         self._name = value
 
     @property
@@ -19,8 +18,7 @@ class Decoration:
 
     @cost.setter
     def cost(self, value: int):
-        if value <= 0:
-            raise AttributeError('Cost must be > 0')
+        assert value > 0, 'Cost must be > 0'
         self._cost = value
 
 
@@ -46,8 +44,7 @@ class Flower:
 
     @name.setter
     def name(self, value: str):
-        if not value:
-            raise AttributeError('Name must not be empty')
+        assert len(value), 'Name must not be empty'
         self._name = value
 
     @property
@@ -56,8 +53,7 @@ class Flower:
 
     @lifetime.setter
     def lifetime(self, value: int):
-        if value <= 0:
-            raise AttributeError('Lifetime must be > 0')
+        assert value > 0, 'Lifetime must be > 0'
         self._lifetime = value
 
     @property
@@ -66,8 +62,7 @@ class Flower:
 
     @color.setter
     def color(self, value: str):
-        if not value:
-            raise AttributeError('Color must not be empty')
+        assert len(value), 'Color must not be empty'
         self._color = value
 
     @property
@@ -76,8 +71,7 @@ class Flower:
 
     @stem_length.setter
     def stem_length(self, value: int):
-        if value <= 0:
-            raise AttributeError('Stem length must be > 0')
+        assert value > 0, 'Stem length must be > 0'
         self._stem_length = value
 
     @property
@@ -86,8 +80,7 @@ class Flower:
 
     @cost.setter
     def cost(self, value: int):
-        if value <= 0:
-            raise AttributeError('Cost must be > 0')
+        assert value > 0, 'Cost must be > 0'
         self._cost = value
 
 
@@ -102,12 +95,9 @@ class Bouquet:
 
     @flowers.setter
     def flowers(self, value: list):
-        if len(value) == 0:
-            raise AttributeError('A bouquet must have at least one flower')
-        for fl in value:
-            if not isinstance(fl, Flower):
-                raise AttributeError('A bouquet must have only'
-                                     'Flowers and Decor')
+        assert len(value), 'A bouquet must have at least one flower'
+        is_flowers = all(isinstance(flower, Flower) for flower in value)
+        assert is_flowers, 'A bouquet must have only Flowers and Decor'
         self._flowers = value
 
     @property
@@ -116,10 +106,8 @@ class Bouquet:
 
     @accessories.setter
     def accessories(self, value: list):
-        for accessor in value:
-            if not isinstance(accessor, Decoration):
-                raise AttributeError('A bouquet must have only'
-                                     'Flowers and Decor')
+        is_accessors = all(isinstance(accessor, Decoration) for accessor in value)
+        assert is_accessors, "Accessors must be from Decorator class"
         self._accessories = value
 
     def get_bouquet_cost(self):
