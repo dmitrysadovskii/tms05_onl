@@ -1,34 +1,26 @@
-import func
+from func import CalculatorMethods
 
 
-def is_int(a, b):
-    if not isinstance(a, int) or not isinstance(b, int):
-        raise TypeError("a и b могут быть только типа int")
-    else:
-        return True
+class Calculator(CalculatorMethods):
 
-
-class Calculator(func.Methods):
+    @staticmethod
+    def is_valid(a, b):
+        assert all(isinstance(number, (float, int)) for number in (a, b)), \
+            "Вы ввели первое или второе число с другимм типом данных."
 
     def sum(self, a, b):
-        valid = is_int(a, b)
-        if valid:
-            print(f"Сумма чисел равна: {a + b}")
+        self.is_valid(a, b)
+        return print(f"Сумма чисел равна: {a + b}")
 
     def dif(self, a, b):
-        valid = is_int(a, b)
-        if valid:
-            print(f"Разность чисел равна: {a - b}")
+        self.is_valid(a, b)
+        return print(f"Разность чисел равна: {a - b}")
 
     def mul(self, a, b):
-        valid = is_int(a, b)
-        if valid:
-            print(f"Произведение чисел равно: {a * b}")
+        self.is_valid(a, b)
+        return print(f"Произведение чисел равно: {a * b}")
 
     def div(self, a, b):
-        valid = is_int(a, b)
-        if valid:
-            try:
-                print(f"Деление чисел равно:  {a / b}")
-            except ZeroDivisionError:
-                print("На ноль делить нельзя!!!")
+        self.is_valid(a, b)
+        assert b != 0, 'Нельзя делить на 0'
+        return print(f"Деление чисел равно:  {a / b}")
