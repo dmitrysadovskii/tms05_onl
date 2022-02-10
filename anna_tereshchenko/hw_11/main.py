@@ -14,32 +14,40 @@ def calculation(option, x, y):
         return print(f'Результат деления = {calc.division(x, y)}')
 
 
-while True:
-    try:
-        option = int(input('1. Сложение\n2. Вычитание\n3. Умножение\n'
-                           '4. Деление\nВведите номер пункта меню:\n'))
+def select_option():
+    option = 0
+    ask_number = True
+    while ask_number:
+        option = input('1. Сложение\n2. Вычитание\n3. Умножение\n'
+                       '4. Деление\nВведите номер пункта меню:\n')
+        if not option.isdigit():
+            print('Это не число, пожалуйста, введите число')
+            continue
+        option = int(option)
         if not 1 <= option <= 4:
             print('Введите число от 1 до 4: ')
             continue
-    except ValueError:
-        print('Это не число, пожалуйста, введите число')
-        continue
-    break
+        ask_number = False
+    return option
 
-first_number = ''
 
-while True:
-    try:
-        if not first_number:
-            first_number = float(input('Введите первое число: '))
-        second_number = float(input('Введите второе число: '))
-        if option == 4 and second_number == 0:
-            print('Делитель не может быть 0, пожалуйста, введите другое число')
+def select_numbers():
+    ask_numbers = True
+    first_number = ''
+    second_number = ''
+    while ask_numbers:
+        first_number = input('Введите первое число: ')
+        second_number = input('Введите второе число: ')
+        is_valid_numbers = all(
+            number.replace('.', '', 1).isdigit()
+            for number in (first_number, second_number))
+        if not is_valid_numbers:
+            print('Вы ввели не числа')
             continue
-    except ValueError:
-        print('Это не число, пожалуйста, введите число')
-        continue
-    break
+        ask_numbers = False
+    return float(first_number), float(second_number)
 
 
+option = select_option()
+first_number, second_number = select_numbers()
 calculation(option, first_number, second_number)

@@ -32,4 +32,5 @@ class Calculator(Methods):
         return first_number * second_number
 
     def division(self, first_number: float, second_number: float):
+        assert second_number != 0, 'Делитель не может быть 0'
         return first_number / second_number
