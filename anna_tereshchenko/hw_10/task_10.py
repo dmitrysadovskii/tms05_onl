@@ -106,8 +106,8 @@ class Bouquet:
 
     @accessories.setter
     def accessories(self, value: list):
-        is_accessors = all(isinstance(accessor, Decoration) for accessor in value)
-        assert is_accessors, "Accessors must be from Decorator class"
+        is_accs = all(isinstance(accessor, Decoration) for accessor in value)
+        assert is_accs, "Accessors must be from Decorator class"
         self._accessories = value
 
     def get_bouquet_cost(self):
