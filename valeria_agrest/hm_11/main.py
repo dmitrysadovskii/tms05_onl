@@ -1,42 +1,34 @@
-import func
+from func import CalculatorMethods
 
 
-def validation(x, y,):
-    if not isinstance(x, int) or not isinstance(y, int):
-        raise TypeError("x or y must be int")
-    else:
+class Calculator(CalculatorMethods):
+
+    @staticmethod
+    def validation(x, y):
+        assert all(isinstance(number, int) for number in (x, y)), \
+            "x or y must be int"
         return True
 
-
-class Calculator(func.Methods):
-
     def sum(self, x, y):
-        valid = validation(x, y)
-        if valid:
-            result = x + y
-            print(f"The result is {result}")
+        self.validation(x, y)
+        result = x + y
+        print(f"The result is {result}")
 
     def deduction(self, x, y):
-        valid = validation(x, y)
-        if valid:
-            result = x - y
-            print(f"The result is {result}")
+        self.validation(x, y)
+        result = x - y
+        print(f"The result is {result}")
 
     def multiplication(self, x, y):
-        valid = validation(x, y,)
-        if valid:
-            result = x * y
-            print(f"The result is {result}")
+        self.validation(x, y)
+        result = x * y
+        print(f"The result is {result}")
 
     def division(self, x, y):
-        valid = validation(x, y)
-        if valid:
-            try:
-                result = x / y
-            except ZeroDivisionError:
-                print("y = 0")
-            else:
-                print(f"The result is {result}")
+        assert y != 0, 'y must not be 0'
+        self.validation(x, y)
+        result = x / y
+        print(f"The result is {result}")
 
 
 calculator = Calculator()
