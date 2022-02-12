@@ -13,7 +13,6 @@ number_names = {
         10: 'ten', 11: 'eleven', 12: 'twelve',
         13: 'thirteen', 14: 'fourteen', 15: 'fifteen', 16: 'sixteen',
         17: 'seventeen',  18: 'eighteen', 19: 'nineteen'}
-
 for test_1: 11 1 2 3 4
         el on tw th fo
 for test_2: 10 11 12 18 0 3 9
@@ -36,9 +35,8 @@ def sort(string):
     names = sorted(names)
     for i in names:
         print(i)
-    if __name__ == '__main__':
-        return names
-
+    __name__ == '__main__'
+    return names
 
 string = input("Enter the numbers separated by a space: ").split()
 sort(string)
