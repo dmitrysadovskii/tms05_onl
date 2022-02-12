@@ -10,8 +10,8 @@
 
 Программа должна состоять из двух файлов(main.py, func.py).
 """
-from func import CalculatorMethods, Validation, UserInteraction
-calc = CalculatorMethods()
+from func import CalculatorMathMethods, Validation, UserInteraction
+calc = CalculatorMathMethods()
 val = Validation()
 ui = UserInteraction()
 
@@ -50,7 +50,8 @@ def calculator_app():
                 y = get_valid_user_number()
                 if y:
                     x, y = calc.to_number(x), calc.to_number(y)
-                    result = calc.perform_calculation(user_operation)(x, y)
+                    math_operation = calc.get_function(user_operation)
+                    result = math_operation(calc, x, y)
                     if result or result == 0:
                         ui.print_results(result, user_operation, x, y)
         to_continue = ui.get_continue_permission('to perform '

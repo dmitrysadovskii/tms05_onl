@@ -1,30 +1,26 @@
 from abc import ABC, abstractmethod
 
 
-class AllMethods(ABC):
+class AllMathMethods(ABC):
 
-    @staticmethod
     @abstractmethod
-    def addition(x, y):
+    def addition(self, x, y):
         pass
 
-    @staticmethod
     @abstractmethod
-    def subtraction(x, y):
+    def subtraction(self, x, y):
         pass
 
-    @staticmethod
     @abstractmethod
-    def division(x, y):
+    def division(self, x, y):
         pass
 
-    @staticmethod
     @abstractmethod
-    def multiplication(x, y):
+    def multiplication(self, x, y):
         pass
 
 
-class CalculatorMethods(AllMethods):
+class CalculatorMathMethods(AllMathMethods):
 
     @staticmethod
     def to_number(num: str) -> (float, int):
@@ -38,27 +34,23 @@ class CalculatorMethods(AllMethods):
         else:
             return float(num)
 
-    @staticmethod
-    def addition(x: (float, int), y: (float, int)) -> (float, int):
+    def addition(self, x: (float, int), y: (float, int)) -> (float, int):
         return x + y
 
-    @staticmethod
-    def subtraction(x: (float, int), y: (float, int)) -> (float, int):
+    def subtraction(self, x: (float, int), y: (float, int)) -> (float, int):
         return x - y
 
-    @staticmethod
-    def division(x: (float, int), y: (float, int)) -> (float, int):
+    def division(self, x: (float, int), y: (float, int)) -> (float, int):
         if y != 0:
             return x / y
         else:
             print('Division by zero is not supported.')
 
-    @staticmethod
-    def multiplication(x: (float, int), y: (float, int)) -> (float, int):
+    def multiplication(self, x: (float, int), y: (float, int)) -> (float, int):
         return x * y
 
     @classmethod
-    def perform_calculation(cls, key):
+    def get_function(cls, key):
         """
         Call specific calculation method by the number which corresponds with
         math operations proposed to the user.
@@ -75,7 +67,7 @@ class CalculatorMethods(AllMethods):
 
 
 class Validation:
-    operations = {
+    OPERATIONS = {
         '1': 'Addition',
         '2': 'Subtraction',
         '3': 'Multiplication',
@@ -90,23 +82,23 @@ class Validation:
         :return: True if choice is available, None if not.
         """
         if user_choice.isdigit() \
-                and user_choice in Validation.operations.keys():
+                and user_choice in Validation.OPERATIONS.keys():
             return True
-        else:
-            print('Only provided operations are available.')
+        print('Only provided operations are available.')
 
     @staticmethod
     def check_input_number(user_number: str) -> bool:
         """
         Check if user provided valid input which can be converted into number.
         :param user_number: input from user.
-        :return: True if input is valid, None if not.
+        :return: True if input is valid, False if not.
         """
-        try:
-            float(user_number)
+        if '-' in user_number:
+            user_number = user_number.replace('-', '', 1)
+        transform_to_check = user_number.replace('.', '', 1).isdigit()
+        if transform_to_check:
             return True
-        except ValueError:
-            print('Please, enter only positive or negative numbers.')
+        return False
 
 
 class UserInteraction:
@@ -118,7 +110,7 @@ class UserInteraction:
         :return: user input as string.
         """
         return input(f'Please select operation to perform: '
-                     f'{Validation.operations}.\nType number of operation to '
+                     f'{Validation.OPERATIONS}.\nType number of operation to '
                      f'proceed: ')
 
     @staticmethod
@@ -149,6 +141,6 @@ class UserInteraction:
         :param y: second number.
         :return: None.
         """
-        operation = Validation.operations.get(operation_num)
+        operation = Validation.OPERATIONS.get(operation_num)
         print(f'Result of {operation} between {x} and {y} is equal to '
               f'{result}.')
