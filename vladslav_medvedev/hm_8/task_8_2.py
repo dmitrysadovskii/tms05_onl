@@ -38,5 +38,6 @@ def sort(string):
     __name__ == '__main__'
     return names
 
+
 string = input("Enter the numbers separated by a space: ").split()
 sort(string)
