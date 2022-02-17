@@ -4,15 +4,9 @@ def typed(arg_type):
             new_args = list()
             for i in args:
                 if arg_type == "str":
-                    if isinstance(i, str):
-                        new_args.append(i)
-                    else:
-                        new_args.append(str(i))
+                    new_args.append(str(i))
                 elif arg_type == "int":
-                    if isinstance(i, int):
-                        new_args.append(i)
-                    else:
-                        new_args.append(float(i))
+                    new_args.append(float(i))
                 else:
                     print("Incorrect arguments type is used")
                     return
