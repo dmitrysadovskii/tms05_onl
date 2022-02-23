@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class Methods(ABC):
+class Methods_for_Calculator(ABC):
 
     @abstractmethod
     def sum(self, a, b):
