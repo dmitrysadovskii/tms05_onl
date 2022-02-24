@@ -7,92 +7,84 @@
 Реализовать поиск цветов в букете по определенным параметрам.
 Узнать, есть ли цветок в букете.
 '''
+import operator
 
 
 class Flowers:
 
-    def __init__(self, name, country, color, long, lifetime, price):
+    def __init__(self, name, country, color, lifetime, price):
         self.name = name
         self.country = country
         self.color = color
-        self.long = long
         self.lifetime = lifetime
         self.price = price
 
 
 class Roses(Flowers):
-
-    def __init__(self):
-        self.name = 'Rose'
-        self.country = 'Holand'
-        self.color = "red"
-        self.long = 70
-        self.lifetime = 70
-        self.price = 25
+    pass
 
 
 class Chamomile(Flowers):
-
-    def __init__(self):
-        self.name = 'Chamomile'
-        self.country = 'Russia'
-        self.color = "white"
-        self.long = 20
-        self.lifetime = 35
-        self.price = 15
-
-class Iris(Flowers):
-
-    def __init__(self):
-        self.name = 'Iris'
-        self.country = 'Ukraine'
-        self.color = "blue"
-        self.long = 25
-        self.lifetime = 32
-        self.price = 17
+    pass
 
 
 class Peony(Flowers):
+    pass
 
-    def __init__(self):
-        self.name = 'Peony'
-        self.country = 'Croatia'
-        self.color = "pink"
-        self.long = 60
-        self.lifetime = 96
-        self.price = 30
 
 class Bouquet:
 
-    def __init__(self,):
-        count_roses_in_the_bouquet = range(0, 5)
-        count_chamomile_in_the_bouquet = range(0, 5)
-        count_iris_in_the_bouquet = range(0, 5)
-        count_peon_in_the_bouquet = range(0, 5)
-        count_flowers_in_the_bouquet = count_roses_in_the_bouquet + count_chamomile_in_the_bouquet + count_iris_in_the_bouquet + count_peon_in_the_bouquet
+    def __init__(self, fl, count):
+        self.fl = fl
+        self.count = count
 
-    def count(self, count_flowers_in_the_bouquet):
-        if Bouquet.count_flowers_in_the_bouquet % 2 == 0:
-            pass
+    def price_of_bouquet(self):
+        price_list = []
+        for flower in self.fl:
+            each_price = self.count[self.fl.index(flower)] * flower.price
+            price_list.append(each_price)
+        print(f"The price of the bouquet is {sum(price_list)}")
+
+    def life_times(self):
+        lifetime = []
+        for flower in self.fl:
+            lifetime.append(flower.lifetime)
+        lifetime = round(sum(lifetime) / len(self.fl), 1)
+        print(f"The  lifetime of the bouquet is {lifetime} hours")
+
+    def search_option(self, option, value):
+        assert isinstance(option, str), "Option should be str"
+        assert len(option), "Please enter an option"
+        assert option in ['life_time', 'price', 'length', 'color', 'fresh'], \
+            f"There is no such option {option}"
+        assert isinstance(value, int), "Value should be int"
+        assert value > 0, "Value must be positive"
+        flower_list = []
+        for el in self.fl:
+            if operator.attrgetter(option)(el) == value:
+                flower_list.append(el.name)
+        if len(flower_list) > 0:
+            name_list_search = ", ".join(flower_list)
+            print(name_list_search)
         else:
-            print(f"Не красиво дарить нечетное количество цветов: {count_flowers_in_the_bouquet}")
+            print('There is no such flower in the bouquet')
 
-    def price_of_bouquet(self,count_roses_in_the_bouquet, count_chamomile_in_the_bouquet, count_iris_in_the_bouquet, count_peon_in_the_bouquet):
-
-        price_rose = count_roses_in_the_bouquet * Roses.price
-        price_chamomile = count_chamomile_in_the_bouquet * Chamomile.price
-        price_iris = count_iris_in_the_bouquet * Iris.price
-        price_peon = count_peon_in_the_bouquet * Peony.price
-
-        sum = price_rose + price_chamomile + price_iris + price_peon
-        print(f'Цена букета равна {sum}')
-
-    def lifetime(self,count_roses_in_the_bouquet, count_chamomile_in_the_bouquet, count_iris_in_the_bouquet, count_peon_in_the_bouquet ):
-        pass
+    def search_flower(self, el):
+        assert isinstance(el, str), "The name of a flower should be str"
+        assert len(el), "Please enter the name of a flower"
+        if el in [flower.name for flower in self.fl]:
+            print(f"{el} is in the bouquet")
+        else:
+            print(f"{el} is not in the bouquet")
 
 
-bouquet = Bouquet()
-print(bouquet)
-
-
-
+roses = Roses(name='Rose', country='Holand', color='red', lifetime=70, price=25)
+chamomile = Chamomile(name='Chamomile', country='Russia', color='white', lifetime=35, price=15)
+peony = Peony(name='Peony', country='Croatia', color='scarlet', lifetime=96, price=30)
+flowers = [roses, chamomile, peony]
+count = [3, 4, 5]
+bouquet = Bouquet(flowers, count)
+bouquet.price_of_bouquet()
+bouquet.life_times()
+bouquet.search_option('price', 25)
+bouquet.search_flower('Chamomile')
