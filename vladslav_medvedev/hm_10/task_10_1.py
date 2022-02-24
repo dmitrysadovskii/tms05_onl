@@ -56,7 +56,7 @@ class Bouquet:
     def search_option(self, option, value):
         assert isinstance(option, str), "Option should be str"
         assert len(option), "Please enter an option"
-        assert option in ['life_time', 'price', 'length', 'color', 'fresh'], \
+        assert option in ['life_time', 'price', 'length', 'color', 'fresh'],\
             f"There is no such option {option}"
         assert isinstance(value, int), "Value should be int"
         assert value > 0, "Value must be positive"
@@ -79,9 +79,12 @@ class Bouquet:
             print(f"{el} is not in the bouquet")
 
 
-roses = Roses(name='Rose', country='Holand', color='red', lifetime=70, price=25)
-chamomile = Chamomile(name='Chamomile', country='Russia', color='white', lifetime=35, price=15)
-peony = Peony(name='Peony', country='Croatia', color='scarlet', lifetime=96, price=30)
+roses = Roses(name='Rose', country='Holand', color='red', lifetime=70,
+              price=25)
+chamomile = Chamomile(name='Chamomile', country='Russia', color='white',
+                      lifetime=35, price=15)
+peony = Peony(name='Peony', country='Croatia', color='scarlet',
+              lifetime=96, price=30)
 flowers = [roses, chamomile, peony]
 count = [3, 4, 5]
 bouquet = Bouquet(flowers, count)
