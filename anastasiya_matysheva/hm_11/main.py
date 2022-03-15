@@ -6,8 +6,8 @@ class Calculator(Calculator_Methods):
     @staticmethod
     def validation(x, y):
         try:
-            value_1 = float(x)
-            value_2 = float(y)
+            x = float(x)
+            y = float(y)
         except ValueError:
             raise TypeError("Invalid data type. Please, enter the numbers")
 
