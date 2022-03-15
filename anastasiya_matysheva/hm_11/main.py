@@ -1,47 +1,43 @@
-import func
+from func import Calculator_Methods
 
 
-def validation(x, y):
-    try:
-        x = float(x)
-        y = float(y)
-    except ValueError:
-        raise TypeError("Invalid data type")
-
-
-class Calculator(func.Methods):
+class Calculator(Calculator_Methods):
 
     @staticmethod
-    def sum(x, y):
+    def validation(x, y):
         try:
-            validation(x, y)
+            value_1 = float(x)
+            value_2 = float(y)
+        except ValueError:
+            raise TypeError("Invalid data type. Please, enter the numbers")
+
+    def sum(self, x, y):
+        try:
+            self.validation(x, y)
             result = float(x) + float(y)
             print(f"The result is {result}")
         except Exception as error:
             print(error)
 
-    @staticmethod
-    def deduction(x, y):
+    def deduction(self, x, y):
         try:
-            validation(x, y)
+            self.validation(x, y)
             result = float(x) - float(y)
             print(f"The result is {result}")
         except Exception as error:
             print(error)
 
-    @staticmethod
-    def multiplication(x, y):
+    def multiplication(self, x, y):
         try:
-            validation(x, y)
+            self.validation(x, y)
             result = float(x) * float(y)
             print(f"The result is {result}")
         except Exception as error:
             print(error)
 
-    @staticmethod
-    def division(x, y):
+    def division(self, x, y):
         try:
-            validation(x, y)
+            self.validation(x, y)
             if float(y) == 0:
                 raise ZeroDivisionError("Division by 0!")
             else:
