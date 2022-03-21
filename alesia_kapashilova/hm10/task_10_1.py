@@ -3,69 +3,34 @@ import operator
 
 class Flower:
 
-    def __init__(self):
-        self.life_time = 10
-        self.color = 'white'
-        self.fresh = True
-        self.length = 6
-        self.price = 10
+    def __init__(self, name, life_time=10, color='white', fresh=True,
+                 length=6, price=10):
+        self.life_time = life_time
+        self.color = color
+        self.fresh = fresh
+        self.length = length
+        self.price = price
+        self.name = name
 
 
 class Chamomile(Flower):
-
-    def __init__(self):
-        self.name = 'Chamomile'
-        super().__init__()
-        self.life_time = 7
-        self.color = 'White'
-        self.lenght = 50
-        self.price = 61
+    pass
 
 
 class Rose(Flower):
-
-    def __init__(self):
-        self.name = 'Rose'
-        super().__init__()
-        self.life_time = 15
-        self.color = 'Black'
-        self.lenght = 70
-        self.price = 64
-        self.fresh = False
+    pass
 
 
 class Gerbera(Flower):
-
-    def __init__(self):
-        self.name = 'Gerbera'
-        super().__init__()
-        self.life_time = 14
-        self.color = 'Pink'
-        self.length = 50
-        self.price = 39
+    pass
 
 
 class Orchid(Flower):
-
-    def __init__(self):
-        self.name = 'Orchid mini'
-        super().__init__()
-        self.life_time = 21
-        self.color = 'Blue'
-        self.length = 30
-        self.price = 52
+    pass
 
 
 class Tulip(Flower):
-
-    def __init__(self):
-        self.name = 'Tulip'
-        super().__init__()
-        self.life_time = 9
-        self.color = 'Yellow'
-        self.length = 20
-        self.price = 15
-        self.fresh = False
+    pass
 
 
 class Bouquet:
@@ -79,8 +44,7 @@ class Bouquet:
         for flower in self.flow:
             each_price = self.counts[self.flow.index(flower)] * flower.price
             price_list.append(each_price)
-        new_price_list = sum(price_list)
-        print(f"The price of the bouquet is {new_price_list}")
+        print(f"The price of the bouquet is {sum(price_list)}")
 
     def withering_time(self):
         lifetime = []
@@ -91,98 +55,37 @@ class Bouquet:
 
     def sort_option(self, option):
         assert isinstance(option, str), "Option should be str"
-        assert len(option) != 0, "Please enter an option"
+        assert len(option), "Please enter an option"
         assert option in ['life_time', 'price', 'length', 'color', 'fresh'], \
             f"There is no such option {option}"
-        result = ''
-        result += option_to_sort(option, self.flow)
-        print(f"{result}")
+        option_dict = {}
+        for flower in self.flow:
+            option_dict[flower.name] = operator.attrgetter(option)(flower)
+        sorted_dict = sorted(option_dict.items(), key=lambda fl: fl[1])
+        for element in sorted_dict:
+            print(element[0], element[1])
 
     def search_option(self, option, value):
         assert isinstance(option, str), "Option should be str"
-        assert len(option) != 0, "Please enter an option"
+        assert len(option), "Please enter an option"
         assert option in ['life_time', 'price', 'length', 'color', 'fresh'], \
             f"There is no such option {option}"
         assert isinstance(value, int), "Value should be int"
         assert value > 0, "Value must be positive"
-        result = ''
-        result += option_to_search(option, value, self.flow)
-        print(f"{result}")
-
-    def search_flower(self, elem):
-        assert isinstance(elem, str), "The name of a flower should be str"
-        assert len(elem) != 0, "Please enter the name of a flower"
-        if elem in [flower.name for flower in self.flow]:
-            print(f"{elem} is in the bouquet")
+        flower_list = []
+        for flower in self.flow:
+            if operator.attrgetter(option)(flower) == value:
+                flower_list.append(flower.name)
+        if len(flower_list) > 0:
+            name_list_search = ", ".join(flower_list)
+            print(name_list_search)
         else:
-            print(f"{elem} is not in the bouquet")
+            print('There is no such flower in the bouquet')
 
-
-def option_to_sort(option, flow):
-    option_dict = {}
-    sorted_option = {}
-    strings = []
-    for elem in flow:
-        if option == "life_time":
-            option_dict[elem.name] = elem.life_time
-        elif option == "length":
-            option_dict[elem.name] = elem.length
-        elif option == "price":
-            option_dict[elem.name] = elem.price
-        elif option == "color":
-            option_dict[elem.name] = elem.color
-        elif option == "fresh":
-            option_dict[elem.name] = elem.fresh
-    sorted_keys = sorted(option_dict, key=option_dict.get)
-    for key in sorted_keys:
-        sorted_option[key] = option_dict[key]
-    for key, item in sorted_option.items():
-        if option == 'fresh':
-            if not item:
-                strings.append(f"{key}: not fresh")
-            elif item:
-                strings.append(f"{key}: fresh")
+    def search_flower(self, flowers):
+        assert isinstance(flowers, str), "The name of a flower should be str"
+        assert len(flowers), "Please enter the name of a flower"
+        if flowers in [flower.name for flower in self.flow]:
+            print(f"{flowers} is in the bouquet")
         else:
-            strings.append(f"{key}: {item}")
-    result = ", ".join(strings)
-    return f"{result} with the sorted option {option} in the bouquet"
-
-
-def search_logic(option, value, flow, names_list):
-    if value in [operator.attrgetter(option)(elem) for elem in flow]:
-        for elem in flow:
-            if operator.attrgetter(option)(elem) == value:
-                names_list.append(elem.name)
-            else:
-                continue
-        name_list_search = ", ".join(names_list)
-        return f"{name_list_search} with the option {option} with the value" \
-               f" {value} in the bouquet "
-    else:
-        return f"There is no such option {option} with the value {value} in " \
-               f"the bouquet "
-
-
-def option_to_search(option, value, flow):
-    names_list = []
-    if option != 'fresh':
-        return search_logic(option, value, flow, names_list)
-    elif option == 'fresh':
-        if value:
-            for elem in flow:
-                if elem.fresh:
-                    names_list.append(elem.name)
-                else:
-                    continue
-            name_list_search = ", ".join(names_list)
-            return f"{name_list_search} with the option fresh with the value" \
-                   f" {value} in the bouquet "
-        if not value:
-            for elem in flow:
-                if not elem.fresh:
-                    names_list.append(elem.name)
-                else:
-                    continue
-            name_list_search = ", ".join(names_list)
-            return f"{name_list_search} with the option fresh with the value" \
-                   f"{value} in the bouquet"
+            print(f"{flowers} is not in the bouquet")
